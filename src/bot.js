@@ -8,6 +8,10 @@ client.on('ready', () => {
 
 client.on('message', (msg) => {
     if (msg.channel.name !== 'emote-only') return;
+    if(!msg.deletable){
+        msg.reply('^ not an emote 😡');
+        return;
+    }
     let s = msg.content.replace(/:[^:\s]+:|<:[^:\s]+:[0-9]+>|<a:[^:\s]+:[0-9]+>/g, '').replace(emojiRegex, '').replace(/\s+/g, '');
     if (s) msg.delete();
 });
