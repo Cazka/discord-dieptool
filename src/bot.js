@@ -8,6 +8,7 @@ client.on('ready', () => {
 
 client.on('message', (msg) => {
     if (msg.channel.name !== 'emote-only') return;
+    if(msg.author.id === client.user.id) return;
     if(!msg.deletable){
         msg.reply('^ not an emote 😡');
         return;
