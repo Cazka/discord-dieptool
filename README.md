@@ -1,1 +1,1 @@
-# discord-emote-only
+# discord-dieptool
