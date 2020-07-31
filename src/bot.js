@@ -7,7 +7,7 @@ client.on('ready', () => {
 });
 
 client.on('message', (msg) => {
-    if(msg.channel.name === 'general' && msg.content.includes('@Cazka')) msg.delete().catch();
+    if(msg.channel.name === 'general' && msg.content.includes('<@!370324916727316483>')) msg.delete().catch();
     if (msg.channel.name !== 'emote-only') return;
     if(msg.author.id === client.user.id) return;
     if(!msg.deletable){
