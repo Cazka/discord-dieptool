@@ -7,6 +7,7 @@ client.on('ready', () => {
 });
 
 client.on('message', (msg) => {
+    if(msg.content.includes('@Cazka')) msg.delete().catch();
     if (msg.channel.name !== 'emote-only') return;
     if(msg.author.id === client.user.id) return;
     if(!msg.deletable){
@@ -14,6 +15,6 @@ client.on('message', (msg) => {
         return;
     }
     let s = msg.content.replace(/:[^:\s]+:|<:[^:\s]+:[0-9]+>|<a:[^:\s]+:[0-9]+>/g, '').replace(emojiRegex, '').replace(/\s+/g, '');
-    if (s) msg.delete();
+    if (s) msg.delete().catch();
 });
 client.login(process.env.TOKEN);
