@@ -23,7 +23,7 @@ function emoteOnly(msg) {
     }
 }
 function gifOnly(msg){
-    
+
 }
 
 client.login(process.env.TOKEN);
