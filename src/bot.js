@@ -8,6 +8,7 @@ client.on('ready', () => {
 
 client.on('message', (msg) => {
     if (msg.channel.name === 'emote-only') emoteOnly(msg);
+    else if(msg.channel.name === 'gif-only') gifOnly(msg);
 });
 
 function emoteOnly(msg) {
@@ -23,7 +24,12 @@ function emoteOnly(msg) {
     }
 }
 function gifOnly(msg){
-
+    if(!msg.startsWith('https://tenor.com/view/')) {
+        if (!msg.deletable) {
+            msg.reply('^ not a gif 😡');
+            return;
+        } else msg.delete().catch();
+    }
 }
 
 client.login(process.env.TOKEN);
