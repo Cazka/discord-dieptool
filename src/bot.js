@@ -40,10 +40,9 @@ client.on('message', async (msg) => {
             if (!link) {
                 let gamemode = args[1];
                 let region = args[2];
-                if(DiepSocket.GAMEMODES.includes(gamemode) && DiepSocket.REGIONS.includes(region)) {
+                if(gamemode && region) {
                     link = await DiepSocket.findServerSync(gamemode, region);
-                }
-                else {
+                } else {
                     msg.reply('Usage: !leaderboard <link> | !leaderboard <gamemode> <region>');
                 }
             }
@@ -66,7 +65,7 @@ client.on('message', async (msg) => {
 
                 const embedLeaderboard = new Discord.MessageEmbed()
                     .setColor('#0099ff')
-                    .setTitle(GAMEMODES[bot.gamemode])
+                    .setTitle(`${GAMEMODES[bot.gamemode]} - ${bot.region}`)
                     .setURL(bot.link)
                     .setDescription(leaderboardString)
                     .setTimestamp()

@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Cazka/discord-dieptool#readme",
   "dependencies": {
-    "diepsocket": "^1.1.7",
+    "diepsocket": "^1.1.8",
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0",
     "emoji-regex": "^9.2.0"
